@@ -11,6 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.filetype.add({
+  extension = {
+    ispc = "ispc",
+  },
+})
+
 require("lazy").setup(
     {{import = "plugins"}, 
     {import = "plugins.lsp"}})
